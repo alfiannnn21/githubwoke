@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Masuk ke akun operator SANTAP+.">
+    <title>Login | SANTAP+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-wrap">
+            <section class="auth-side">
+                <a href="index.html" class="brand" aria-label="SANTAP+, beranda">
+                    <img src="assets/brand-logo.jpg" alt="" class="brand-img">
+                    <span>SANTAP<span class="brand-plus">+</span></span>
+                </a>
+                <h2>Selamat datang kembali.</h2>
+                <p>Masuk untuk melanjutkan ke akun operator SANTAP+.</p>
+            </section>
+
+            <section class="auth-panel" aria-labelledby="loginTitle">
+                <span class="eyebrow"><i class="bi bi-shield-lock" aria-hidden="true"></i>&nbsp; AKSES OPERATOR</span>
+                <h1 id="loginTitle">Login</h1>
+                <p class="auth-intro">Gunakan email operator dan kata sandi yang sudah terdaftar.</p>
+
+                <div class="alert" id="loginUnavailable" role="status" hidden></div>
+                <p class="alert" id="loginMessage" role="status" aria-live="polite" hidden></p>
+
+                <form id="loginForm" autocomplete="on" hidden>
+                    <label for="email">Email operator</label>
+                    <input id="email" name="email" type="email" autocomplete="username" maxlength="254" required placeholder="nama@gmail.com">
+
+                    <label for="password">Kata sandi</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" maxlength="72" required placeholder="Masukkan kata sandi">
+
+                    <button class="btn btn-primary" id="loginButton" type="submit">
+                        <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>&nbsp; Masuk
+                    </button>
+                </form>
+
+                <form id="logoutForm" hidden>
+                    <button class="btn btn-outline" type="submit">Keluar</button>
+                </form>
+
+                <p class="muted" id="loginHelp" hidden>Akun operator dibuat oleh pengelola sistem. Jika belum memiliki akun, hubungi pengelola.</p>
+                <p class="muted"><a href="index.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Kembali ke beranda</a></p>
+            </section>
+        </div>
+    </main>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

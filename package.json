@@ -1,0 +1,15 @@
+{
+  "name": "githubwoke-santap",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "create-operator": "node scripts/create-operator.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mysql2": "^3.14.1"
+  }
+}

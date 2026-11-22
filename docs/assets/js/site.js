@@ -3,6 +3,23 @@
     var menuToggle = document.getElementById("menuToggle");
     var mainNav = document.getElementById("mainNav");
     var header = document.querySelector(".site-header");
+    var staticNotice = document.getElementById("staticNotice");
+
+    if (staticNotice) {
+        fetch("/api/session", { cache: "no-store" })
+            .then(async function (response) {
+                var contentType = response.headers.get("content-type") || "";
+                if (!contentType.toLowerCase().includes("application/json")) return;
+                if (response.status === 200 || response.status === 401) {
+                    staticNotice.hidden = true;
+                } else if (response.status === 503) {
+                    staticNotice.textContent = "Login belum aktif: konfigurasi API dan database MySQL di Vercel belum lengkap.";
+                }
+            })
+            .catch(function () {
+                staticNotice.textContent = "Versi GitHub Pages hanya menampilkan katalog contoh dan tidak menjalankan login.";
+            });
+    }
 
     if (menuToggle && mainNav) {
         function setMenuOpen(open) {
